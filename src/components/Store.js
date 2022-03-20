@@ -1,10 +1,15 @@
 import React, {Component} from "react";
+import ListView from "./ListView";
+import ViewSwitcher from "./ViewSwitcher";
 import CardsView from "./CardsView";
 
 export default class Store extends Component {
 
     constructor(props, context) {
         super(props, context);
+        this.state = {type: 'card'};
+        this.changeViewType = this.changeViewType.bind(this);
+
         this.pics = [{
             name: "Nike Metcon 2",
             price: "130",
@@ -44,9 +49,35 @@ export default class Store extends Component {
         }];
     }
 
+    changeViewType() {
+        let prevType = this.state.type;
+        if (prevType === 'card') this.setState({type: 'list'});
+        if (prevType === 'list') this.setState({type: 'card'});
+    }
+
+    clickHandler() {
+        this.changeViewType();
+    }
+
+
     render() {
+        let obj;
+        let type = this.state.type;
+
+        if (type === 'card') obj = <CardsView products={this.pics}/>;
+        if (type === 'list') obj = <ListView products={this.pics}/>;
+
         return (
-            <CardsView products={this.pics}/>
+
+            <div className='mainContainer'>
+                <ViewSwitcher
+                    func={
+                        (e) => this.clickHandler(e)
+                    }
+                    type={type}
+                />
+                {obj}
+            </div>
         );
     }
 }

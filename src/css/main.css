@@ -1,4 +1,6 @@
-.cardsView{
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.cardsView {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -6,7 +8,12 @@
     margin: auto;
 }
 
-.shopItem{
+.listView{
+    display: flex;
+    flex-direction: column;
+}
+
+.shopItem.card {
     display: flex;
     flex-direction: column;
     max-width: 200px;
@@ -16,33 +23,57 @@
     padding: 20px;
 }
 
-.shopItem-title{
+.shopItem.list {
+    display: flex;
+    flex-direction: row;
+    max-height: 50px;
+    border: 1px solid white;
+    border-bottom: 0;
+    background-color: #f5f5f5;
+    margin: 0 40px;
+    padding: 20px;
+}
+
+.shopItem-title {
     text-transform: uppercase;
 }
 
-.shopItem-title{
+.shopItem-title {
     display: flex;
     margin-left: auto;
     margin-right: auto;
     font-size: 20px;
     font-weight: bold;
+    align-self: center;
 }
 
-.shopItem-color{
+.shopItem-title.list{
+    font-size: 25px;
+}
+
+.shopItem-color {
     display: flex;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
     color: darkgray;
+    align-self: center;
 }
 
-.shopItem-container{
+.shopItem-container {
     display: flex;
     flex-direction: row;
     margin: 10px auto;
+    align-self: center;
 }
 
-.addButton{
+.shopItem-img.list{
+    width: 80px;
+    height: 80px;
+    margin-top: -20px;
+}
+
+.addButton {
     display: flex;
     border: 1px solid red;
     color: red;
@@ -55,13 +86,29 @@
     font-size: 14px;
 }
 
-.addButton:hover{
+.shopItem-container.list >.addButton{
+    margin-left: 60px;
+}
+
+.addButton:hover {
     color: white;
     background-color: red;
 }
 
-.shopItem-price{
+.shopItem-price {
     align-self: center;
     color: red;
     font-weight: bold;
+}
+
+.material-icons{
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
 }

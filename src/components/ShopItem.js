@@ -8,14 +8,13 @@ export default class ShopItem extends Component {
     }
 
     render() {
-
         return (
-            <div className='shopItem'>
-                <div className='shopItem-title'>{this.props.productContent.name}</div>
-                <div className='shopItem-color'>{this.props.productContent.color}</div>
-                <img className='shopItem-img' src={this.props.productContent.img} alt={this.props.productContent.name}/>
-                <div className='shopItem-container'>
-                    <div className='shopItem-price'>${this.props.productContent.price}</div>
+            <div className={'shopItem ' + this.props.type}>
+                <img className={'shopItem-img ' + this.props.type} src={this.props.productContent.img} alt='bla bla'/>
+                <div className={'shopItem-title ' + this.props.type}>{this.props.productContent.name}</div>
+                <div className={'shopItem-color ' + this.props.type}>{this.props.productContent.color}</div>
+                <div className={'shopItem-container ' + this.props.type}>
+                    <div className={'shopItem-price ' + this.props.type}>${this.props.productContent.price}</div>
                     <AddButton/>
                 </div>
 

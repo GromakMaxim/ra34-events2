@@ -10,7 +10,7 @@ export default class CardsView extends Component {
     render() {
         let arr = [];
         this.props.products.forEach(p => {
-            arr.push(<ShopItem productContent={p}/>)
+            arr.push(<ShopItem productContent={p} type='card' key={p.id}/>)
         })
         return (
             <div className='cardsView'>
