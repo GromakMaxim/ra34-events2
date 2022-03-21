@@ -68,7 +68,6 @@ export default class Store extends Component {
         if (type === 'list') obj = <ListView products={this.pics}/>;
 
         return (
-
             <div className='mainContainer'>
                 <ViewSwitcher
                     func={

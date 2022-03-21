@@ -1,15 +1,11 @@
-import React, {Component} from "react";
+import React from "react";
 
-export default class ViewSwitcher extends Component {
+export default function ViewSwitcher(props) {
 
-    constructor(props, context) {
-        super(props, context);
+    if (props.type === 'card') {
+        return <span className="material-icons md-48" onClick={props.func}>view_list</span>;
     }
-
-    render() {
-        if (this.props.type === 'card') return <span className="material-icons md-48" onClick={this.props.func}>view_list</span>;
-        if (this.props.type === 'list') return <span className="material-icons md-48" onClick={this.props.func}>view_module</span>;
-
+    if (props.type === 'list') {
+        return <span className="material-icons md-48" onClick={props.func}>view_module</span>;
     }
-
 }

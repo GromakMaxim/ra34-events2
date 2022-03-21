@@ -1,21 +1,16 @@
-import React, {Component} from "react";
+import React from "react";
 import ShopItem from "./ShopItem";
 
-export default class ListView extends Component {
+export default function ListView(props) {
 
-    constructor(props, context) {
-        super(props, context);
-    }
+    let arr = [];
+    props.products.forEach(p => {
+        arr.push(<ShopItem productContent={p} type='list' key={p.id}/>)
+    })
+    return (
+        <div className='listView'>
+            {arr}
+        </div>
+    );
 
-    render() {
-        let arr = [];
-        this.props.products.forEach(p => {
-            arr.push(<ShopItem productContent={p} type='list' key={p.id}/>)
-        })
-        return (
-            <div className='listView'>
-                {arr}
-            </div>
-        );
-    }
 }
